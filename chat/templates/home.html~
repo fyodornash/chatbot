@@ -1,0 +1,11 @@
+Hello there traveler. I can see you have come a long way. Would you like a hot meal?
+{{ sentence_text }}
+<table id="chat_table"> 
+    {% for sentence in sentences %}
+        <tr><td>{{ sentence.text }}</td></tr>
+    {% endfor %}
+</table>
+<form method="POST">
+    <input name="story_text" type="text" placeholder="continue the story"/>
+    {% csrf_token %}
+</form>
