@@ -1,0 +1,12 @@
+Hello. How are you feeling today?
+
+<table id="chat_table"> 
+    {% for sentence,response in exchanges %}
+        <tr><td>{{ sentence.text }}</td></tr>
+        <tr><td>{{ response.text }}</td></tr>
+    {% endfor %}
+</table>
+<form method="POST" action="/conversation/{{conversation.id}}/add">
+    <input name="story_text" type="text" placeholder="continue the story" autofocus="autofocus"/>
+    {% csrf_token %}
+</form>

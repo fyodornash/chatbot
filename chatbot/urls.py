@@ -18,6 +18,9 @@ from django.contrib import admin
 from chat import views
 
 urlpatterns = [
-    url(r'^$',views.home_page_view,name='home')
+    url(r'^$',views.home_page_view,name='home'),
+    url(r'^conversation/new_conversation/$', views.new_conversation, name='new_conversation'),
+    url(r'^conversation/(\d+)/add$', views.add_exchange, name='add'),
+    url(r'^conversation/(\d+)/$', views.view_conversation, name='view_conversation'),
     #url(r'^admin/', admin.site.urls),
 ]

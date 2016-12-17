@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from chat import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^$',views.home_page_view,name='home'),
+    url(r'^conversation/new_conversation/$', views.new_conversation, name='new_conversation'),
+    url(r'^conversation/(.+)/add$', views.add_exchange, name='add'),
+    url(r'^conversation/(.+)/$', views.view_conversation, name='view_conversation'),
+    #url(r'^admin/', admin.site.urls),
 ]
